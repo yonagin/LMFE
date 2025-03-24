@@ -28,5 +28,6 @@ A web-based AI chat frontend application supporting OpenAI-compatible API interf
 - Accessible OpenAI-compatible API service (e.g., LM Studio local service)
 
 ## Related Projects
-[LM Studio - Local AI Runtime](https://github.com/lmstudio-ai)  
-[OpenAI API - Compatible Specifications](https://platform.openai.com/docs/api-reference)
+### [FREE-CHATGPT-API-provides free Chatgpt api](https://github.com/popjane/free_chatgpt_api)
+### [LM Studio - Local AI Runtime](https://github.com/lmstudio-ai)  
+### [OpenAI API - Compatible Specifications](https://platform.openai.com/docs/api-reference)
