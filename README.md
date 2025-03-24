@@ -27,5 +27,6 @@
 ## 前置要求
 - 可访问的类OpenAI API服务（如LM Studio本地服务）
 ## 相关项目
+### [FREE-CHATGPT-API-提供免费的chatgpt的api使用](https://github.com/popjane/free_chatgpt_api)
 ### [LM Studio - 本地AI运行环境](https://github.com/lmstudio-ai)
 ### [OpenAI API - 兼容API规范](https://platform.openai.com/docs/api-reference)
