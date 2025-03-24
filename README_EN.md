@@ -23,7 +23,7 @@ A web-based AI chat frontend application supporting OpenAI-compatible API interf
 
 - **Enhanced Interaction**  
   ◾ Real-time character counter  
-  ◾ Math/code formula rendering support  
+  ◾ Math/code rendering support  
 
 ## Prerequisites
 - Accessible OpenAI-compatible API service (e.g., LM Studio local service)
