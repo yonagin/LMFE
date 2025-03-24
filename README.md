@@ -26,7 +26,6 @@
   
 ## 前置要求
 - 可访问的类OpenAI API服务（如LM Studio本地服务）
-- 
 ## 相关项目
 ### [LM Studio - 本地AI运行环境](https://github.com/lmstudio-ai)
 ### [OpenAI API - 兼容API规范](https://platform.openai.com/docs/api-reference)
