@@ -4,7 +4,8 @@
 
 A web-based AI chat frontend application supporting OpenAI-compatible API interfaces, providing conversation management and parameter adjustment features. Optimized for mobile/Android WebView environments.
 
-![Demo Screenshot](icon.jpg)
+![DemoScreenshot1](https://s21.ax1x.com/2025/03/24/pEB6Kde.png)
+![DemoScreenshot2](https://s21.ax1x.com/2025/03/24/pEB6adg.png)
 
 ## Key Features
 
