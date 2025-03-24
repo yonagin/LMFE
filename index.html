@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMStudio 你的本地AI</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:;base64,=">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        enableMenu: false,
+        skipHtmlTags: ['pre', 'code']
+      },
+    };
+  </script>
+  <script id="MathJax-script" async src="tex-mml-chtml.js"></script>
+</head>
+<body>
+  <!-- 左侧：对话记录列表（默认隐藏） -->
+  <div id="conversations-list" class="side-panel left-panel hidden">
+    <button id="new-conversation">新建对话</button>
+    <div id="conversation-items"></div>
+  </div>
+
+  <!-- 右侧：模型选择和参数调整（默认隐藏） -->
+  <div id="settings" class="side-panel right-panel hidden">
+    <label for="api-end">api接口(类似OpenAI)：</label>
+    <input type="text" id="api-end" class="api-input"  placeholder="例如http://192.27.65.69:1234">
+    <label for="api-key">api密钥(可选)：</label>
+    <input type="text" id="api-key" class="api-input">
+    <label for="model-select">选择模型：</label>
+    <select id="model-select"></select>
+	<label for="system-prompt">系统提示词：</label>
+    <input type="text" id="system-prompt" value="你是一个猫娘" placeholder="更改后需创建新对话">
+    <label for="temperature-input">温度：</label>
+	<div class="range-container">
+	  <input type="range" id="temperature-input" min="0" max="1.5" step="0.05" value="0.7">
+	  <span id="temperature-value" class="value-display">0.7</span>
+	</div>
+    <label for="maxtokens-input">最大输出字数：</label>
+    <div class="range-container">
+      <input type="range" id="maxtokens-input" min="0" max="20480" step="1024" value="4096">
+      <span id="maxtokens-value" class="value-display">4096</span>
+    </div>
+	</div>
+	
+
+  <!-- 中间：聊天区域 -->
+  <div class="main-wrapper">
+    <div id="chat-container">
+      <div id="messages">
+        <div id="welcome-message" class="welcome-message">
+          <img src="icon.jpg"
+               alt="Chat Icon"
+               class="welcome-icon">
+          <h2>LMFE</h2>
+          <h2>属于你的AI前端</h2>
+          <div class="tips">
+            <ul>
+              <li>💡 使用技巧：</li>
+              <li>点击左侧按钮添加对话</li>
+              <li>点击右侧按钮设置参数</li>
+              <li>注意检查api接口具体路径</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="input-area" >
+        <textarea id="input" placeholder="输入消息"></textarea>
+        <div id="char-counter" class="char-counter" ></div>
+        <button id="send" class="send-button" role="button" aria-disabled="false">
+          <i class="fas fa-arrow-up send-icon"></i>
+          <i class="fas fa-stop stop-icon"></i>
+        </button>
+      </div>
+     </div>
+    </div>
+
+  <!-- 控制按钮 -->
+  <button id="toggle-conversations" class="toggle-btn left-toggle">☰</button>
+  <button id="toggle-settings" class="toggle-btn right-toggle">⚙</button>
+  <div id="Confirm">
+      <p>确定要删除此对话吗？</p>
+      <button id="yes">确定</button>
+      <button id="no">取消</button>
+  </div>
+  <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999;"></div>
+
+  <script type="module" src="api.js"></script>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="utils.js"></script>
+</body>
+</html>
