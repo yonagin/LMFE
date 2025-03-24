@@ -4,7 +4,7 @@
 
 一个基于Web的AI聊天前端应用，支持对接类OpenAI API接口，提供对话管理、参数调节等功能。适配移动端/Android WebView环境。
 
-![示例截图](https://imgse.com/i/pEB6Kde)
+![示例截图](https://s21.ax1x.com/2025/03/24/pEB6Kde.png)
 
 ## 主要功能
 
