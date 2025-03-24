@@ -1,0 +1,746 @@
+/* 全局样式 */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background-color: #fff;
+  color: #404040;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 控制按钮 */
+.toggle-btn {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: #000;
+  background-color: transparent;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 20;
+}
+
+
+.left-toggle {
+  top: 7px;
+  left: 0px;
+  font-size: 30px;
+}
+
+.right-toggle {
+  right: 7px;
+  top: -1px;
+  font-size: 40px;
+}
+
+
+/* 侧边栏通用样式 */
+.side-panel {
+  position: fixed;
+  bottom: 16px;
+  width: 230px;
+  padding: 16px;
+  background-color: #f9fbff;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 16px rgba(133, 138, 154, 0.25);
+  z-index: 10;
+  display: flex; /* 添加 Flexbox */
+  flex-direction: column; /* 垂直排列子元素 */
+  justify-content: flex-start; /* 顶部对齐，保持原有布局 */
+  align-items: center; /* 水平居中子元素 */
+}
+
+.left-panel {
+  top: 0px;
+  left: 16px;
+}
+
+.right-panel {
+  top: 0px;
+  width: 199px; 
+  background-color: #fff;
+  right: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 左侧对话记录列表 */
+#conversations-list {
+  top:-3px;
+  min-height: 450px;
+  left: 1px;
+  overflow-y: auto;
+}
+
+#new-conversation {
+  width: 80%;
+  height: 34px;
+  margin-bottom: 16px;
+  padding: 0 14px;
+  font-size: 16px;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4166d5;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#new-conversation:hover {
+  background-color: #2c5282 ;
+}
+
+#conversation-items .conversation-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 230px;
+  border-radius: 12px;
+  background-color: transparent;
+  color: #404040;
+  font-size: 13px;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease-in-out;
+  border: 1px solid #e2e8f0;
+}
+
+
+#conversation-items .conversation-item.selected {
+  background-color: #2c5282;
+  color: #4d6bfe;
+}
+
+#conversation-items .delete-conversation {
+  float: right;
+  color: #e53535;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#conversation-items .conversation-item:hover .delete-conversation {
+  opacity: 1;
+}
+
+#Confirm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #dce0e9;
+  box-shadow: 0 4px 16px rgba(133, 138, 154, 0.25);
+  z-index: 1000;
+  width: 280px;
+  text-align: center;
+}
+
+#Confirm p {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #404040;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+#Confirm button {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin: 0 8px;
+}
+
+#yes {
+  background-color:#4d6bfe;
+  color: #fff;
+}
+
+#yes:hover {
+  background-color: #4166d5;
+  transform: translateY(-1px);
+}
+
+#no {
+  background-color: #f5f5f5;
+  color: #737373;
+}
+
+#no:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+/* 右侧设置区域 */
+#settings {
+  min-height: 400px;
+
+}
+
+#settings label {
+  display: block;
+  font-size: 14px;
+  color: #737373;
+  margin-bottom: 6px;
+}
+
+
+
+.api-input::placeholder,#system-prompt {
+  text-align: center;
+}
+
+#save-ip {
+  padding: 0 14px;
+  height: 34px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #4d6bfe;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#save-ip:hover {
+  background-color: #4166d5;
+}
+
+
+#model-select, #temperature-input,#maxtokens-input, .api-input, #system-prompt {
+  width: 100%;
+  height: 34px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 0 0 1px #dce0e9;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#model-select:focus, #temperature-input:focus, maxtokens-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #4d6bfe;
+  background-color: #fff;
+}
+
+#temperature-value{
+  display: inline-block;
+  top:-10px;
+  font-size: 10px;
+  color: #737373;
+}
+
+#maxtokens-value{
+  display: inline-block;
+  top:30px;
+  font-size: 10px;
+  color: #737373;
+}
+
+.range-container {
+  position: relative;
+  width: 100%;
+}
+
+.value-display {
+  position: absolute;
+  background-color: rgba(77, 107, 254, 0.1);
+  color: #fff;
+  padding: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+/* 主内容容器 */
+.main-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* 给顶部元素留空间 */
+}
+
+/* 聊天容器 */
+#chat-container {
+  max-width: 100%;
+  width: 80%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  margin: 0 auto;
+  max-width: 1200px;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* 消息容器 */
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+  gap: 30px;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2:first-of-type {
+  /* 主标题样式 */
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 0.2em;
+  animation: float 3s ease-in-out infinite;
+}
+
+h2:last-of-type {
+  /* 副标题样式 */
+  font-size: 1.8em;
+  color: #7f8c8d;
+  border-left: 4px solid #3498db;
+  padding-left: 15px;
+  margin-top: 0;
+  opacity: 0.9;
+}
+
+/* 悬浮动画 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.welcome-icon {
+  width: 156px;
+  height: 156px;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.tips {
+  margin-top: 2rem;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.tips li {
+  padding: 0.3rem 0;
+}
+
+/* 用户消息 */
+.user {
+  background-color: #eff6ff;
+  color: #262626;
+  border-radius: 14px;
+  padding: 8px 20px;
+  max-width: 80%;
+  min-width: 120px;
+  align-self: flex-end;
+  margin-left: 20%;
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 助手消息 */
+.main-content {
+  color: #404040;
+  max-width: 80%;
+  align-self: flex-start;  /* 左对齐 */
+  word-break: break-word;
+
+  line-height: 1.5;
+  position: relative;
+  padding-left: 12px;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.assistant .loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* 思维链容器 */
+.think-container {
+  margin: 4px 0 8px;
+  border: 1px solid rgba(229,229,229,0.6);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  transition: max-height 0.25s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.think-header {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.think-header:hover {
+  background: rgba(245,245,245,0.4);
+}
+
+.think-title {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* 箭头图标 */
+.toggle {
+  font-size: 12px;
+  margin-left: 5px;
+  color: #999;
+  transition: transform 0.2s;
+  font-family: Arial, sans-serif;
+}
+
+.think-container.collapsed {
+  max-height: 80px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.think-container.expanded {
+  width: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  min-width: 0;
+  max-width: 90%;
+}
+
+.think-container.expanded .toggle {
+  transform: rotate(180deg);
+  color: #4d6bfe;
+}
+
+/* 内容区域 */
+.think-content {
+  padding: 0px 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  max-height: 0;
+}
+
+.think-container.expanded .think-content {
+  max-height: 1000px;
+  overflow-y: auto;
+}
+
+/* 输入框定位 */
+#input-area {
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  width: 100%;
+  z-index: 1;
+}
+
+#input {
+  box-sizing: border-box;
+  left: -10%;
+  width: 100%;
+  resize: none;
+  overflow-y: auto;
+  font-size: 16px;
+  border-radius: 16px;
+  border: none;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 0px 0.5px #dce0e9;
+  transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+
+  #input::placeholder {
+    line-height: normal;
+    vertical-align: middle;
+    color: #999;
+  }
+}
+
+.char-counter {
+  position: absolute;
+  left: 45%;
+  bottom: 0%;
+  color: #0867d2;
+  font-size: 10px;
+  background: #dfdfdf;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+
+#input:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #4d6bfe;
+  background-color: #fff;
+}
+
+#send {
+  position: absolute;
+  right: -10%;
+  transform: translateY(-10%); /* 调整垂直位置 */
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* 图标样式 */
+#send .send-icon {
+  font-size: 28px;
+  color: #4d6bfe;
+  display: block;
+}
+
+#send .stop-icon {
+  font-size: 28px;
+  color: #4d6bfe;
+  display: none;
+}
+
+/* 悬停效果 */
+#send:hover {
+  background-color: #2c5282;
+  color: #2c5282;
+}
+
+/* 聚焦状态 */
+#send:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(77, 107, 254, 0.3);
+}
+
+
+#send.stop .send-icon {
+  display: none;
+}
+
+#send.stop .stop-icon {
+  display: block;
+}
+
+/* MATH CODE*/
+.math {
+  display: inline;
+}
+.math.display {
+  display: block;
+  padding: 5px 5px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code {
+  background: #f4f4f4;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: pre-wrap;
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+  background: none;
+  padding: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.copy-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+
+.copy-btn:hover svg {
+  color: #333;
+}
+
+/* 成功反馈动画 */
+.copy-btn.copied {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.9); }
+}
+
+
+/* 响应式设计 - 平板及以下 */
+@media screen and (max-width: 768px) {
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  .main-wrapper {
+  min-height: -webkit-fill-available;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  }
+
+  #chat-container {
+  height: 100%;
+  }
+
+  .side-panel {
+    max-height: 50%;
+  }
+
+  .right-panel {
+    top:-1px;
+    right: -6px;
+  }
+
+
+  .range-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+  #conversation-items .delete-conversation {
+    font-size: 10px;
+    color: #fff;
+    opacity: 1;
+    border: 2px solid  #dbeafe;
+    border-radius:12px;
+  }
+
+   .welcome-message {
+     width: 95%;
+     top: 100%;
+     padding: 0.5rem;
+   }
+
+  .tips {
+    text-align: center;
+  }
+
+  #messages {
+    max-width: 100%;
+    padding: 12px 0;
+    padding-bottom: 240px
+
+  }
+
+
+  .user, .main-content {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .think-header {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+  #input {
+    bottom: 5px;
+    min-width: 120%;
+    font-size: 14px;
+    padding: 12px 10px;
+  }
+
+  .api-input {
+  width: 183px;
+  }
+
+  #input-area {
+    left: 0;
+    right: 0;
+    width: 80%;
+    backdrop-filter: blur(5px);
+
+  }
+
+  .toggle-btn {
+    width: 30px;
+
+  }
+
+  .right-toggle {
+    right: 9px;
+  }
+}
+
+
