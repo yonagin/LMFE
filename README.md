@@ -4,11 +4,11 @@
 
 一个基于Web的AI聊天前端应用，支持对接类OpenAI API接口，提供对话管理、参数调节等功能。适配移动端/Android WebView环境。
 
-###主页面
+### 主页面
 ![示例截图1](https://s21.ax1x.com/2025/03/24/pEB6Kde.png)
-###公式渲染
+### 公式渲染
 ![示例截图2](https://s21.ax1x.com/2025/03/24/pEB6adg.png)
-###支持思维链模型
+### 支持思维链模型
 ![示例截图2](https://s21.ax1x.com/2025/03/24/pEBcKXV.png)
 
 
